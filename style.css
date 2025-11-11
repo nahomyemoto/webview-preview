@@ -1,0 +1,270 @@
+:root {
+  --coffee-900: #3a2b26;
+  --coffee-700: #5a4138;
+  --beige-100: #f6efe6;
+  --beige-300: #e6dacf;
+  --gold-500: #c9a15a;
+  --black-900: #0b0b0b;
+  --white: #ffffff;
+  --muted: #8b7f78;
+  --card-shadow: 0 8px 30px rgba(20, 15, 10, 0.12);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+  margin: 0;
+  color: var(--coffee-900);
+  background: linear-gradient(180deg, var(--beige-100), #fff);
+}
+
+/* HEADER */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 32px;
+  backdrop-filter: blur(6px);
+  position: sticky;
+  top: 0;
+  background: transparent;
+  z-index: 30;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--coffee-700), var(--coffee-900));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--beige-100);
+  font-family: "Playfair Display";
+  font-size: 18px;
+  font-weight: 700;
+  box-shadow: var(--card-shadow);
+}
+
+h1 {
+  margin: 0;
+  font-family: "Playfair Display";
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+nav {
+  display: flex;
+  gap: 18px;
+}
+
+nav a {
+  color: var(--coffee-900);
+  text-decoration: none;
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* HERO */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 520px;
+  gap: 32px;
+  padding: 48px 32px;
+  align-items: center;
+}
+
+.headline {
+  font-family: "Playfair Display";
+  font-size: 56px;
+  line-height: 1;
+  color: var(--coffee-900);
+}
+
+.sub {
+  color: var(--coffee-700);
+  max-width: 56ch;
+  margin-bottom: 20px;
+}
+
+.cta {
+  display: inline-block;
+  background: var(--coffee-900);
+  color: var(--beige-100);
+  padding: 14px 22px;
+  border-radius: 12px;
+  text-decoration: none;
+  font-weight: 600;
+  box-shadow: 0 10px 30px rgba(58, 43, 38, 0.12);
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.6);
+  padding: 18px;
+  border-radius: 14px;
+  box-shadow: var(--card-shadow);
+  backdrop-filter: blur(6px);
+}
+
+.hero-card img {
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+}
+
+.tag {
+  font-size: 12px;
+  color: var(--muted);
+  background: var(--beige-100);
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+/* PRODUTOS */
+.products {
+  padding: 36px 32px;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  background: var(--white);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  transition: transform 0.28s ease, box-shadow 0.28s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 50px rgba(20, 15, 10, 0.16);
+}
+
+.card-img img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 16px;
+}
+
+.product-title {
+  font-family: "Playfair Display";
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.product-desc {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 12px;
+}
+
+.price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.price {
+  font-weight: 700;
+}
+
+.buy {
+  background: transparent;
+  border: 1px solid var(--coffee-700);
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+/* GALERIA */
+.galeria {
+  padding: 36px 32px;
+}
+
+.galeria-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.galeria-grid img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* FOOTER */
+footer {
+  padding: 36px 32px;
+  background: linear-gradient(180deg, transparent, rgba(245, 240, 236, 0.6));
+  margin-top: 40px;
+}
+
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* RESPONSIVO */
+@media (max-width: 1024px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero-card img {
+    height: 300px;
+  }
+}
+
+@media (max-width: 640px) {
+  header {
+    padding: 16px;
+  }
+
+  .hero {
+    padding: 28px 16px;
+  }
+
+  .headline {
+    font-size: 36px;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}
